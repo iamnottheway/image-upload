@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import axios from "axios";
 
 const PreviewImageCard = ({ image }) => {
@@ -25,7 +25,7 @@ const PreviewImageCard = ({ image }) => {
     const formData = new FormData();
     formData.append("file", image.file);
     upload(formData);
-  }, []);
+  }, [image.file]);
 
   return (
     <PreviewCard>
@@ -76,11 +76,6 @@ const ProgressBarContainer = styled.div`
   border-radius: 4px;
   overflow: hidden;
   margin: 5px 0px;
-`;
-
-const BarAnimation = keyframes`
-  from { width: 0; }
-  to { width: 100%; }
 `;
 
 const ProgressBar = styled.div`
