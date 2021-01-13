@@ -3,13 +3,7 @@ import styled from "styled-components";
 import DropFileUploader from "./dropzone";
 import Illustration from "./illustration";
 
-// callback to do an action after a file has loaded [x]
-// callback when an action has finished [x]
-// API to integrate with backend
-// dropArea component [x]
-// adjust width and height
-
-const InnerDropArea = ({ state }) => {
+const DropArea = ({ state }) => {
   return (
     <Container>
       <Illustration state={state}></Illustration>
@@ -18,11 +12,6 @@ const InnerDropArea = ({ state }) => {
     </Container>
   );
 };
-
-const Container = styled.div`
-  display: grid;
-  place-items: center;
-`;
 
 function App() {
   const onComplete = () => {
@@ -34,7 +23,7 @@ function App() {
       <DropFileUploader
         width={350}
         height={240}
-        DropAreaComponent={<InnerDropArea />}
+        DropAreaComponent={<DropArea />}
         onEnterDropArea={() => console.log("its on top")}
         onLeaveDropArea={() => console.log("its gone")}
         onFileLoad={() => console.log("loaded")}
@@ -50,6 +39,11 @@ const Wrapper = styled.div`
   display: grid;
   place-items: center;
   background: #fff1f1;
+`;
+
+const Container = styled.div`
+  display: grid;
+  place-items: center;
 `;
 
 export default App;
