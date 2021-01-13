@@ -7,7 +7,7 @@ const PreviewImageCard = ({ image }) => {
   function upload(formData) {
     axios({
       method: "POST",
-      url: "http://127.0.0.1:5000/upload",
+      url: "https://upload-backend-ben90193.herokuapp.com/upload",
       data: formData,
       onUploadProgress: event => {
         const completedPercent = Math.round((event.loaded / event.total) * 100);
