@@ -23,11 +23,11 @@ function App() {
       <DropFileUploader
         width={350}
         height={240}
-        DropAreaComponent={<DropArea />}
-        onEnterDropArea={() => console.log("its on top")}
-        onLeaveDropArea={() => console.log("its gone")}
-        onFileLoad={() => console.log("loaded")}
-        onComplete={onComplete}
+        DropAreaComponent={<DropArea />} // Use a custom component.
+        onEnterDropArea={() => console.log("its on top")} // run custom code when entering drop area
+        onLeaveDropArea={() => console.log("its gone")} // run custom code when leaving drop area
+        onFileLoad={() => console.log("loaded")} // run custom code when a file is loaded
+        onComplete={() => {}} // run custom code when after upload is complete
       ></DropFileUploader>
     </Wrapper>
   );

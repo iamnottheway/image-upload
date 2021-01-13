@@ -116,8 +116,8 @@ const DropFileUploader = ({
               {currentState === types.idle && (
                 <Heading>Drag and drop an image to Upload</Heading>
               )}
-              {currentState === types.over && <h3>Let it go...</h3>}
-              {currentState === types.finished && <h3>Done!</h3>}
+              {currentState === types.over && <Heading>Let it go...</Heading>}
+              {currentState === types.finished && <Heading>Done!</Heading>}
             </>
           )
         )}
